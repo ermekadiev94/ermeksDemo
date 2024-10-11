@@ -1,7 +1,6 @@
 package demoqa_tests;
 
 import demoqa.data.MockDataGenerator;
-import demoqa.entiies.TextBox;
 import org.testng.annotations.Test;
 
 public class TextBoxTests extends BaseTest {
@@ -18,8 +17,9 @@ public class TextBoxTests extends BaseTest {
     }
 
     @Test
-    void testTextBox2() {
+    void testTextBox2() throws InterruptedException {
         driver.get("https://demoqa.com/text-box");
         demoqaPages.getTextBoxPage().fillTextBoxForm(MockDataGenerator.randomTextBox());
+        Thread.sleep(4000);
     }
 }

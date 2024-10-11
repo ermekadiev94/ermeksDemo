@@ -16,7 +16,6 @@ public class TextBox {
         this.permanentAddress = permanentAddress;
     }
 
-
     public String getFullName() {
         return fullName;
     }

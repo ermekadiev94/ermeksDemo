@@ -1,8 +1,7 @@
 package demoqa.helper;
 
 import demoqa.drivers.DriverManager;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,12 +15,26 @@ public class WebElementActions {
     public WebElementActions click(WebElement element) {
         waitElementToBeVisible(element);
         waitElementToBeClickable(element);
+        highlight(element);
         element.click();
+        return this;
+    }
+
+    public WebElementActions jsClick(WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor)DriverManager.getDriver();
+        executor.executeScript("arguments[0].click();", element);
+        return this;
+    }
+
+    public WebElementActions highlight(WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor)DriverManager.getDriver();
+        executor.executeScript("arguments[0].style.border='3px solid yellow'", element);
         return this;
     }
 
     public WebElementActions input(WebElement element, String txt) {
         waitElementToBeVisible(element);
+        highlight(element);
         element.sendKeys(txt);
         return this;
     }
@@ -64,5 +77,4 @@ public class WebElementActions {
         actions.contextClick(element).build().perform();
         return this;
     }
-
 }

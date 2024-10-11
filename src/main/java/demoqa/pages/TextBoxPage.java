@@ -20,7 +20,7 @@ public class TextBoxPage extends BasePage {
     @FindBy(id = "permanentAddress")
     public WebElement permanentAddress;
 
-    @FindBy(id = "submit1")
+    @FindBy(id = "submit")
     public WebElement submit;
 
     @Step("Input fullName {0}")
