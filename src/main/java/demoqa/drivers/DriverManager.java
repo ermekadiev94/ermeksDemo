@@ -11,7 +11,7 @@ public class DriverManager {
         if (driver == null) {
             switch (ConfigReader.getValue("browser").toLowerCase()) {
                 case "chrome":
-                    driver = ChromeWebDriver.loadFirefoxDriver();
+                    driver = ChromeWebDriver.loadChromeDriver();
                     break;
                 default:
                     throw new IllegalArgumentException("Unsupported browser: " + ConfigReader.getValue("browser"));
