@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class TextBoxTests extends BaseTest {
 
 
-    @Test
+    @Test(groups = {"API", "TC-17"})
     void testTextBox() {
         driver.get("https://demoqa.com/text-box");
         demoqaPages.getTextBoxPage().inputUserName("John Doe")
@@ -16,7 +16,7 @@ public class TextBoxTests extends BaseTest {
                 .submit();
     }
 
-    @Test
+    @Test(groups = {"DB", "TC-18"})
     void testTextBox2() throws InterruptedException {
         driver.get("https://demoqa.com/text-box");
         demoqaPages.getTextBoxPage().fillTextBoxForm(MockDataGenerator.randomTextBox());

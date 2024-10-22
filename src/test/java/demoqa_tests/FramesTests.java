@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class FramesTests extends BaseTest {
 
-    @Test
+    @Test(groups = {"UI", "TC-15"})
     void testFrames() {
         helper.getBrowserManager().openURL("https://demoqa.com/frames");
         helper.getiFrameHelper().switchToIFrame(demoqaPages.getFramesPage().frame1);

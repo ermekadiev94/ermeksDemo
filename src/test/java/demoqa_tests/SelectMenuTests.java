@@ -8,7 +8,7 @@ import static demoqa.enums.OldStyleSelectMenuValues.GREEN;
 
 public class SelectMenuTests extends BaseTest {
 
-    @Test
+    @Test(groups = {"UI", "TC-16"})
     void selectMenuTest() throws InterruptedException {
         helper.getBrowserManager().openURL("https://demoqa.com/select-menu");
         helper.getDropdownHelper().selectByText(demoqaPages.getSelectMenuPage().oldStyleSelectMenu, GREEN.getColor());
@@ -17,6 +17,5 @@ public class SelectMenuTests extends BaseTest {
         for (String color : colors) {
             System.out.println(color);
         }
-
     }
 }
