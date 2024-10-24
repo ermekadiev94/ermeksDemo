@@ -27,7 +27,7 @@ public class ChromeWebDriver {
         // Specify the URL of the remote WebDriver server
         WebDriver driver = null;
         try {
-            driver = new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), options);
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/"), options);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
