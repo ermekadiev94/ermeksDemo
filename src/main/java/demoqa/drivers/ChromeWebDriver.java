@@ -15,7 +15,7 @@ import static demoqa.utils.ConfigReader.getValue;
 public class ChromeWebDriver {
 
     public static WebDriver loadChromeDriver() {
-        System.setProperty("webdriver.chrome.driver", "/opt/chromedriver-linux64/chromedriver");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-extensions");
@@ -25,7 +25,7 @@ public class ChromeWebDriver {
             options.addArguments("--headless");
         }
         // Specify the URL of the remote WebDriver server
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.manage().window().maximize();
         return driver;
